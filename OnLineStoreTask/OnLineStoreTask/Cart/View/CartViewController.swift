@@ -17,8 +17,7 @@ class CartViewController: UIViewController {
     // MARK: - Properties
     
     private let viewModel = CartViewModel()
-    
-    
+
     
     // MARK: - Override Functions
     // viewDidLoad
@@ -58,7 +57,5 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
         cell.modify(product: viewModel.filteredCartProducts[indexPath.row])
         return cell
     }
-    
-    
-    
+
 }

@@ -15,8 +15,6 @@ struct Product: Codable {
     
 }
 
-
-
 class ProductViewModel {
 
     var products: [Product] = []
@@ -44,7 +42,7 @@ private extension ProductViewModel {
             Product(name: "TV", price: 42500),
             Product(name: "Mobile", price: 1500),
             Product(name: "Laptop", price: 500000),
-            Product(name: "Joystick", price: 175)
+            Product(name: "Joystick", price: 1750)
         ]
     }
 }

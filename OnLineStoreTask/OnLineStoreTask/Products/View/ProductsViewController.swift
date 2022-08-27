@@ -36,8 +36,6 @@ class ProductsViewController: UIViewController {
         
     }
     
-    
-    
     // MARK: - Actions
     
     @IBAction func cartButtonTapped(_ sender: Any) {
@@ -62,8 +60,6 @@ class ProductsViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    
-    
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource{
@@ -86,7 +82,5 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource{
         cartProducts.append(viewModel.products[indexPath.row])
         viewModel.saveToUserDefaults(of: cartProducts)
     }
-    
-    
     
 }

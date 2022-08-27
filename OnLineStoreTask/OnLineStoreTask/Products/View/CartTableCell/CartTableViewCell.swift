@@ -13,9 +13,7 @@ class CartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
-    
-    
-    
+
     // MARK: - Properties
     
     static let identifier = "CartTableViewCell"

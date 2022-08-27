@@ -8,13 +8,11 @@
 import UIKit
 
 class ProductTableViewCell: UITableViewCell {
-
+    
     // MARK: - Outlets
     
-     @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
-    
-    
     
     // MARK: - Properties
     
@@ -44,6 +42,5 @@ class ProductTableViewCell: UITableViewCell {
         self.productNameLabel.text = product.name
         self.productPriceLabel.text =  String("\(product.price)$")
     }
-    
     
 }

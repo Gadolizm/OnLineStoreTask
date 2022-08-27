@@ -10,12 +10,11 @@ import Foundation
 
 class CartViewModel {
     
-    
     let defaults = UserDefaults.standard
     var cartProducts = [Product]()
     var filteredCartProducts = [Product]()
     var productsDidRefresh: (() -> Void)?
-
+    
     func refreshProducts() {
         readDataFromUserDefaults()
         filterLatestAddedProducts(of: cartProducts)
@@ -25,18 +24,15 @@ class CartViewModel {
     
     func readDataFromUserDefaults() {
         
-        guard let decoded  = defaults.object(forKey: "cartProducts") else { return }
-        
-        let decodedProducts = try? PropertyListDecoder().decode([Product].self, from: decoded as! Data)
-        print(decodedProducts as Any)
+        guard let retrievedData = defaults.object(forKey: "cartProducts") else { return }
+        let decodedProducts = try? PropertyListDecoder().decode([Product].self, from: retrievedData as! Data)
         cartProducts = decodedProducts ?? [Product]()
         
     }
     
     func filterLatestAddedProducts(of products: [Product]) {
-        let beforeThereDays = Calendar.current.date(byAdding: .day, value: -3, to: Date())
-        filteredCartProducts = products.filter{$0.date! > beforeThereDays!}
+        let beforeThreeDays = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        filteredCartProducts = products.filter{$0.date! > beforeThreeDays}
     }
-    
     
 }
